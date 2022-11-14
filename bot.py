@@ -3,6 +3,8 @@
 import os
 from configs import Config
 import asyncio
+from aiohttp import web
+from plugins import web_server
 import enums
 import traceback
 from binascii import (
@@ -470,6 +472,10 @@ async def button(bot: Client, cmd: CallbackQuery):
     try:
         await cmd.answer()
     except QueryIdInvalid: pass
+app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
 
 
 Bot.run()
