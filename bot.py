@@ -4,7 +4,7 @@ import os
 from configs import Config
 import asyncio
 from aiohttp import web
-from plugins import web_server
+from handlers import web_server
 import enums
 import traceback
 from binascii import (
