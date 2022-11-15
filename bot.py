@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 
 from configs import Config , LOGGER
-PORT = ""
+PORT = "8000"
 
 
 name ="""
