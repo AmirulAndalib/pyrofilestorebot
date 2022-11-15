@@ -7,5 +7,6 @@ psutil
 requests
 pymongo
 aiohttp
+enums
 pyromod
 flask
