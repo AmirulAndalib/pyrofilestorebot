@@ -10,7 +10,7 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 
-from configs import Config
+from configs import Config , LOGGER
 
 
 name ="""
