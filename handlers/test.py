@@ -1,6 +1,7 @@
 # (c) @AbirHasan2005
 
 import os
+from bot import Bot
 from keep_alive import keep_alive
 from configs import Config
 import asyncio
