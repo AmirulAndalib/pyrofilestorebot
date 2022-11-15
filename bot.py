@@ -1,6 +1,7 @@
 # (c) @AbirHasan2005
 
 import os
+from keep_alive import keep_alive
 from configs import Config
 import asyncio
 from aiohttp import web
@@ -472,10 +473,6 @@ async def button(bot: Client, cmd: CallbackQuery):
     try:
         await cmd.answer()
     except QueryIdInvalid: pass
-async def test():
-    app = web.AppRunner(await web_server())
-    await app.setup()
-    bind_address = "0.0.0.0"
-    await web.TCPSite(app, bind_address, PORT).start()
-await test()
+
+keep_alive()
 Bot.run()
