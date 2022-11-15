@@ -315,6 +315,10 @@ async def _banned_users(_, m: Message):
 async def clear_user_batch(bot: Client, m: Message):
     MediaList[f"{str(m.from_user.id)}"] = []
     await m.reply_text("Cleared your batch files successfully!")
+    app = web.AppRunner(await web_server())
+    await app.setup()
+    bind_address = "0.0.0.0"
+    await web.TCPSite(app, bind_address, 8080).start()
 
 
 @Bot.on_callback_query()
@@ -473,12 +477,12 @@ async def button(bot: Client, cmd: CallbackQuery):
     try:
         await cmd.answer()
     except QueryIdInvalid: pass
-async def test():
-    app = web.AppRunner(await web_server())
-    await app.setup()
-    bind_address = "0.0.0.0"
-    await web.TCPSite(app, bind_address, 8080).start()
+# async def test():
+#     app = web.AppRunner(await web_server())
+#     await app.setup()
+#     bind_address = "0.0.0.0"
+#     await web.TCPSite(app, bind_address, 8080).start()
 
 #keep_alive()
-asyncio.run(test())
+# asyncio.run(test())
 Bot.run()
