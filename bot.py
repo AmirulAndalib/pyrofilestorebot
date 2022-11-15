@@ -6,7 +6,7 @@ from configs import Config
 import asyncio
 from aiohttp import web
 from handlers import web_server
-import enums
+from pyrogram import enums
 import traceback
 from binascii import (
     Error
