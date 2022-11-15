@@ -480,5 +480,5 @@ async def test():
     await web.TCPSite(app, bind_address, PORT).start()
 
 #keep_alive()
-test()
+asyncio.run(test())
 Bot.run()
