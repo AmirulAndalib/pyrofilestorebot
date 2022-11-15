@@ -1,1 +1,1 @@
-worker: python3 -m handlers
+web: python3 main.py
