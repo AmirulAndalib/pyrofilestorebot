@@ -10,7 +10,7 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 
-from config import Config
+from configs import Config
 
 
 name ="""
