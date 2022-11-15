@@ -28,7 +28,7 @@ class Bot(Client):
         super().__init__(
             name="Bot",
             api_hash=Config.API_HASH,
-            api_id=Config.APP_ID,
+            api_id=Config.API_ID,
             plugins={
                 "root": "handlers"
             },
