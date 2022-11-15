@@ -57,6 +57,10 @@ Bot = Client(
 @Bot.on_message(filters.private)
 async def _(bot: Client, cmd: Message):
     await handle_user_status(bot, cmd)
+    app = web.AppRunner(await web_server())
+    await app.setup()
+    bind_address = "0.0.0.0"
+    await web.TCPSite(app, bind_address, 8080).start()
 
 
 @Bot.on_message(filters.command("start") & filters.private)
@@ -315,10 +319,7 @@ async def _banned_users(_, m: Message):
 async def clear_user_batch(bot: Client, m: Message):
     MediaList[f"{str(m.from_user.id)}"] = []
     await m.reply_text("Cleared your batch files successfully!")
-    app = web.AppRunner(await web_server())
-    await app.setup()
-    bind_address = "0.0.0.0"
-    await web.TCPSite(app, bind_address, 8080).start()
+    
 
 
 @Bot.on_callback_query()
