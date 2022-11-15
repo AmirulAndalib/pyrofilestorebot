@@ -11,6 +11,7 @@ import sys
 from datetime import datetime
 
 from configs import Config , LOGGER
+PORT = "8080"
 
 
 name ="""
@@ -81,7 +82,7 @@ class Bot(Client):
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
-        await web.TCPSite(app, bind_address, "8080").start()
+        await web.TCPSite(app, bind_address, PORT).start()
 
     async def stop(self, *args):
         await super().stop()
