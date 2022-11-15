@@ -473,7 +473,7 @@ async def button(bot: Client, cmd: CallbackQuery):
     try:
         await cmd.answer()
     except QueryIdInvalid: pass
-def test():
+async def test():
     app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
