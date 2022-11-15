@@ -483,4 +483,4 @@ async def button(bot: Client, cmd: CallbackQuery):
 
 #keep_alive()
 # asyncio.run(test())
-Bot.run()
+#Bot.run()
